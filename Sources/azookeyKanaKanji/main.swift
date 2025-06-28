@@ -132,7 +132,7 @@ let options = ConvertRequestOptions.withDefaultDictionary(
 print("変換オプションを設定しました")
 print("テストを開始します...")
 
-//testKanaKanjiConversion(converter: converter, options: options)
+testKanaKanjiConversion(converter: converter, options: options)
 
 while(true) {
     let input = readLine() ?? "";
