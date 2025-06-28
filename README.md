@@ -11,7 +11,7 @@ AzooKeyKanaKanjiConverterとzenzモデルの日本語かな漢字変換テスト
 | モデル                                                                                              | 設定                          | 候補内正解数 | 第一候補正解数 | 総データ数 | 候補内正解率 | 第一候補正解率 |
 |--------------------------------------------------------------------------------------------------|-----------------------------|--------|---------|-------|--------|---------|
 | AzooKeyKanaKanjiConverter, [zenz-v3-small](https://huggingface.co/Miwa-Keita/zenz-v3-small-gguf) | N_best=50, inferenceLimit=1 | 1351   | 1182    | 1745  | 77.4%  | 67.7%   |
-| Mozc辞書（単純な実装）                                                                                    | N_best=50                   | 1689   | 1107    | 1745  | 96.8%  | 63.4%   |
+| [Mozc辞書](https://github.com/google/mozc/tree/master/src/data/dictionary_oss)（単純な実装）                                                                                    | N_best=50                   | 1689   | 1107    | 1745  | 96.8%  | 63.4%   |
 
 **表の説明:**
 - **候補内正解数**: 変換候補のいずれかに正解が含まれる数
