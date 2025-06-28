@@ -1,17 +1,17 @@
 # azookeyKanaKanji
 
-AzooKeyKanaKanjiConverterとZenzaiニューラルモデルを使用した日本語かな漢字変換テストツール
+AzooKeyKanaKanjiConverterとzenzモデルの日本語かな漢字変換テストツール
 
 ## 概要
 
-このプロジェクトは、AzooKeyKanaKanjiConverterライブラリを使用して日本語のかな漢字変換の精度をテストするためのSwiftプロジェクトです。
+このプロジェクトは、AzooKeyKanaKanjiConverterのかな漢字変換の精度をテストするためのSwiftプロジェクトです。
 
 ### 結果
 
-| モデル                                      | 設定                          | 候補内正解数 | 第一候補正解数 | 総データ数 | 候補内正解率 | 第一候補正解率 |
-|------------------------------------------|-----------------------------|--------|---------|-------|--------|---------|
-| AzooKeyKanaKanjiConverter, Zenz-v3-small | N_best=50, inferenceLimit=1 | 1351   | 1182    | 1745  | 77.4%  | 67.7%   |
-| Mozc辞書（単純な実装）                            | N_best=50                   | 1689   | 1107    | 1745  | 96.8%  | 63.4%   |
+| モデル                                                                                              | 設定                          | 候補内正解数 | 第一候補正解数 | 総データ数 | 候補内正解率 | 第一候補正解率 |
+|--------------------------------------------------------------------------------------------------|-----------------------------|--------|---------|-------|--------|---------|
+| AzooKeyKanaKanjiConverter, [zenz-v3-small](https://huggingface.co/Miwa-Keita/zenz-v3-small-gguf) | N_best=50, inferenceLimit=1 | 1351   | 1182    | 1745  | 77.4%  | 67.7%   |
+| Mozc辞書（単純な実装）                                                                                    | N_best=50                   | 1689   | 1107    | 1745  | 96.8%  | 63.4%   |
 
 **表の説明:**
 - **候補内正解数**: 変換候補のいずれかに正解が含まれる数
@@ -22,7 +22,7 @@ AzooKeyKanaKanjiConverterとZenzaiニューラルモデルを使用した日本�
 ## 機能
 
 - 日本語かな漢字変換のテスト実行
-- Zenzaiニューラルモデルによる高精度変換
+- zenzニューラルモデルによる高精度変換
 - テストコーパスを使用した変換精度の評価
 - カラーコード付き結果表示（緑=完全一致、黄=候補内、赤=未一致）
 
@@ -59,7 +59,7 @@ azookeyKanaKanji/
 
 1. AzooKeyKanaKanjiConverterをWindowsで動かすを参照してください。
 2. Windowsで動かすためのllama.cppをダウンロードしてください。
-3. [Zenzai](https://huggingface.co/Miwa-Keita/zenz-v2.5-medium)をダウンロードしてください。
+3. [zenz](https://huggingface.co/Miwa-Keita/zenz-v3-small-gguf)をダウンロードしてください。
 
 ### 実行
 
@@ -89,5 +89,5 @@ swift run
 ありがとうございます！
 
 - [AzooKeyKanaKanjiConverter](https://github.com/azooKey/AzooKeyKanaKanjiConverter)
-- [Zenzai](https://huggingface.co/Miwa-Keita/zenz-v3-small-gguf)
+- [zenz](https://huggingface.co/Miwa-Keita/zenz-v3-small-gguf)
 - [fkunn1326/azooKey-Windows](https://github.com/fkunn1326/azooKey-Windows)
