@@ -49,6 +49,7 @@ func testKanaKanjiConversion(converter: KanaKanjiConverter, options: ConvertRequ
 
     var acCount = 0
     var okCount = 0
+    var okCounts = Array(repeating: 0, count: 50)
 
     for item in data {
         let read = item.read
@@ -82,6 +83,9 @@ func testKanaKanjiConversion(converter: KanaKanjiConverter, options: ConvertRequ
             acCount += 1
             okCount += 1
         } else if candidateStrings.contains(actual) {
+            if let index = candidateStrings.firstIndex(of: actual) {
+                okCounts[index] += 1
+            }
             // 候補リストに正解が含まれているかチェック
             print("\(yellow)actual: \(actual), result: \(firstResult), read: \(read)\(end)")
             okCount += 1
@@ -90,6 +94,7 @@ func testKanaKanjiConversion(converter: KanaKanjiConverter, options: ConvertRequ
         }
     }
 
+    print(okCounts)
     print("\(okCount)(\(acCount))/\(data.count)")
 }
 
@@ -149,6 +154,9 @@ while(true) {
     }
     let firstResult = candidateStrings.first ?? ""
     print("\(input): \(firstResult)")
+    candidateStrings.forEach { str in
+        print(str)
+    }
     
 
 }
